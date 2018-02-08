@@ -15,11 +15,11 @@ export default class Dep {
     this.id = uid++
     this.subs = []
   }
-  addSub(sub){
+  addSub(sub) {
     this.subs.push(sub)
   }
-  notify(){
-    this.subs.forEach(sub=>sub.update())
+  notify() {
+    this.subs.forEach(sub => sub.update())
   }
 }
 

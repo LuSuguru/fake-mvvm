@@ -8,27 +8,26 @@ export default class Watcher {
     this.expOrFn = expOrFn
     this.value = this.get()
   }
-  update(){
+  update() {
     this.run()
   }
-  run(){
-    const  value = this.get()
-    if(value !==this.value){
+  run() {
+    const value = this.get()
+    if (value !== this.value) {
       this.value = value
       this.cb.call(this.vm)
     }
   }
-  addDep(dep){
+  addDep(dep) {
     dep.addSub(this)
   }
-  beforeGet(){
-
-
-  }
-  afterGet(){
+  beforeGet() {
 
   }
-  get(){
+  afterGet() {
+
+  }
+  get() {
     Dep.target = this
     console.log(7777);
     //此处简化。。要区分fuction还是expression

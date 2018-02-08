@@ -1,7 +1,6 @@
 
-var path = require('path');
-//为了放在每次修改都便利 react 给他起个花名
-var node_modules = path.resolve(__dirname, 'node_modules');
+var path = require('path')
+var node_modules = path.resolve(__dirname, 'node_modules')
 // var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js');
 // var pathToReactRouter = path.resolve(node_modules, 'react-router/umd/ReactRouter.min.js');
 
@@ -21,5 +20,4 @@ module.exports = {
       exclude: /node_modules/,
     }]
   }
-
-};
+}
