@@ -14,7 +14,6 @@ class Vue {
     Object.keys(options.data).forEach(key => this._proxy(key))
     observer(options.data)
     const vdom = watch(this, this._render.bind(this), this._update.bind(this))
-    console.log(vdom)
   }
 
   _proxy(key) {

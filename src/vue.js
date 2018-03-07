@@ -3,17 +3,17 @@ import Vue from './instance/vue'
 
 
 const v = new Vue({
+  el: '#mvvm',
   data: {
-    a: 1,
-    b: {
-      c: 3
+    a: 'test model',
+    b: 'hello MVVM',
+    flag: true
+  },
+  methods: {
+    testToggle: function () {
+      this.flag = !this.flag;
+      this.b = this.flag ? 'hello MVVM' : 'test success'
     }
   }
 })
 
-
-v.$watch("a", () => console.log("哈哈"))
-
-setTimeout(() => { v.a = 4 }, 1000)
-
-setTimeout(() => { v.a = 5 }, 2000)
