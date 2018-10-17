@@ -11,7 +11,7 @@ export default class Observer {
   }
 
   defineReactive(obj, key, val) {
-    let dep = new Dep()
+    this.dep = new Dep()
     let childOb = observe(val)
 
     Object.defineProperty(obj, key, {
@@ -21,9 +21,10 @@ export default class Observer {
       //给data对象添加依赖关系
       get: () => {
         // watch使用的标志位，
-        Dep.target && dep.depend()
-        childOb && childOb.dep.depend()
-
+        if (Dep.target) {
+          this.dep.depend()
+          childOb && childOb.dep.depend()
+        }
         return val
       },
 
@@ -36,7 +37,7 @@ export default class Observer {
         // 监听子属性
         childOb = observe(newVal)
         // 通知数据更新
-        dep.notify()
+        this.dep.notify()
       }
     })
   }

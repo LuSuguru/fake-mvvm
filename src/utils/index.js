@@ -70,6 +70,7 @@ export default {
   },
 
   _setVmVal(vm, exp, value) {
+    console.log(exp)
     let val = vm
     exp = exp.split('.')
     exp.forEach((key, index) => {

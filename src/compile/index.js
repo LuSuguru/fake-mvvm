@@ -94,7 +94,7 @@ export default class Compile {
     return attr.indexOf('x-') === 0
   }
 
-  // 时间指令判定
+  // 事件指令判定
   isEventDirective(dir) {
     return dir.indexOf('on') === 0
   }

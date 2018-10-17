@@ -7,9 +7,9 @@
 
 <body>
   <div id="mvvm">
-    <h2>{{b}}</h2>
+    <h2>{{b.c}}</h2>
     <input type="text" x-model="a">
-    <input type="text" name="" value="" x-model="a">
+    <input type="text" name="" value="" x-model="b.c">
     <p x-html="a">{{ a }}</p>
     <button type="button" name="button" x-on:click="testToggle">change b</button>
   </div>
